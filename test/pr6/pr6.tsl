@@ -1,0 +1,18 @@
+let (one:Tile)= import tile1.tl;
+let (two:Tile)= import tile2.tl;
+let (three:Tile)= import tile3.tl;
+let (clear:Tile)= blank size one;
+let (re2:Tile) = hstick hstick one two three ;
+let (re1:Tile)= hstick hstick two three one ;
+let (re3:Tile)= hstick hstick three one two; 
+let (row1 :Tile)= hrepeat 20 re1;
+let (row2 :Tile)= hrepeat 20 re2;
+let (row3 :Tile)= hrepeat 20 re3;
+let (result:Tile)= vrepeat 20 (vstick vstick row1 row2 row3);
+result = replace 0 0 clear result;
+result = replace (size one) 0 clear result;
+result = replace 0 (size one) clear result;
+result = replace (59 *(size one)) (58 *(size one)) clear result ;
+result = replace (59 *(size one)) (59 *(size one)) clear result ;
+result = replace (58 *(size one)) (59 *(size one)) clear result ;
+return result

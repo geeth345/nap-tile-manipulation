@@ -1,0 +1,3 @@
+let (tile1:Tile)= import tile1.tl;
+let (tile2:Tile)= import tile2.tl;
+return replace 12 12 tile2 tile1

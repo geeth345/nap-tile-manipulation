@@ -1,0 +1,21 @@
+let (tile1:Tile)= import tile1.tl;
+let (x:Int)=0;
+let (y:Int)=0;
+let(base:Tile)= blank ((size tile1)*101);
+while (x<101) do {
+    y=0;
+    while (y<101) do {
+        if ((2*x)<y) then {
+            base = replace (x*size tile1) (y*size tile1) tile1 base
+        };
+        y=y+1
+    };
+    x=x+1
+};
+let (base2:Tile)= rotate 3 base;
+let (refBase2:Tile)= hreflect base;
+let (refBase:Tile)= vreflect base2;
+let (result:Tile)= (Tand (Tor base base2) (negate (Tand base base2)));
+result =(Tand (Tor refBase result) (negate (Tand result refBase)));
+result =(Tand (Tor refBase2 result) (negate (Tand result refBase2)));
+return result

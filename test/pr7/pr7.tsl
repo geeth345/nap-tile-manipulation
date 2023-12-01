@@ -1,0 +1,14 @@
+let (input:Tile)= import tile1.tl;
+let (scaler:Int)=100;
+let (tempTile : Tile)= scale scaler input;
+let (siz:Int)= size input;
+let (result :Tile )= tempTile;
+scaler= scaler -2;
+let (tiles:[Tile])= list [tempTile];
+while (scaler>0) do {
+    tempTile = replace ((100-scaler)*siz) ((100-scaler)*siz) (scale scaler input) (blank (100*(siz)));
+    scaler = scaler -2;
+    result= (Tand (Tor tempTile result) (negate (Tand result tempTile)))
+};
+return (vstick (hstick result hreflect result) (hstick (vreflect result) (hreflect vreflect result)))
+

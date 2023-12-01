@@ -1,0 +1,19 @@
+let (tile1:Tile)= import tile1.tl;
+let (tile2:Tile)= import tile2.tl;
+let (tile3:Tile)= scale 2 tile2;
+let (leftBar1:Tile)= vstick vstick vstick vstick (vreflect tile1) (vreflect tile1) tile2 (vreflect tile2) tile1;
+let (leftBar2:Tile)= vstick vstick (hstick (vreflect tile1) (vreflect tile2) ) tile3 (vreflect tile3);
+let (leftBar3:Tile)= vstick vstick (hstick (vreflect tile2) (vreflect tile1)  ) tile3 (vreflect tile3);
+let (leftBarLeft:Tile)= hstick leftBar1 leftBar2;
+let (leftBarRight:Tile)= hstick leftBar3 leftBar1;
+let (topBarLeft:Tile)= hstick hstick (vreflect tile3) (vreflect tile3) (vstick (vreflect tile2) tile1);
+let (topBarRight: Tile)= hstick hstick (vstick (vreflect tile2) tile1) (vreflect tile3) (vreflect tile3) ;
+let (bottomBar1LR:Tile)= vstick vstick (vreflect tile2) tile1 tile1;
+let (bottomBar2:Tile)= vstick (vreflect tile3) (hstick tile1 tile2);
+let (bottomBar2right:Tile)= vstick (vreflect tile3) (hstick tile2 tile1);
+let (bottomBar3LR:Tile)= vstick (hstick tile1 tile1) (tile3);
+let (iterable:Tile) = hstick leftBarLeft (vstick topBarLeft hstick hstick bottomBar1LR bottomBar2 bottomBar3LR);
+let (iterable2:Tile)= hstick (vstick topBarRight hstick hstick bottomBar3LR bottomBar2right bottomBar1LR) leftBarRight;
+let (row1:Tile)= hstick hrepeat 2 (hstick iterable iterable2) iterable;
+let (result:Tile)= vrepeat 4 (vstick row1 (vreflect row1));
+return result

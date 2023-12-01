@@ -1,0 +1,59 @@
+TILE FUNCTIONS
+
+Rotate Int Tile = Rotate tiles Int times 90 degrees clockwise
+Hstick Tile Tile = Stick 2 tiles together horizontally if they have the same height
+Vstick Tile Tile =  Stick 2 tiles together vertically if they have the same wide
+Size Tile = Returns the size of the tile 
+Hrepeat Int Tile = Repeat the specified tile Int times horizontally if they have the same height
+Vrepeat Int Tile = Repeat the specified tile Int times vertically if they have the same width
+Hreflect Tile = Reflects the tile in its horizontal axis
+Vreflect Tile = Reflects the tile in its vertical axis
+Blank Int = Creates a blank tile of size Int
+Full Int = Creates a full tile of size int
+Scale Int Tile = Scales tile by Int times
+Negate Tile = Negates the tile (flips the 1s and 0s)
+Subtile Int Int Int Tile = Returns a subtile of the specified tile of size int and position (Int,Int)
+Square Tile = Returns a square tile in the funky form specified
+Tequal Tile Tile = Returns true if the tiles are equal
+Tand Tile Tille = Returns funky and or the tiles
+Tor Tile Tile = Returns funky or of the tiles
+Change Int Int Int Tile = Changes the tile at the frist 2 ints coords to the third Int
+Replace Int Int Tile Tile = Replaces the tile at the first 2 ints coords with the third tile
+Inspect Int Int Tile = Returns the cell at the first 2 ints coords
+************create
+
+Import String = Imports a tile from a file
+
+Boolean Ops
+And Bool Bool = Returns the and of the 2 bools
+Or Bool Bool = Returns the or of the 2 bools
+Not Bool = Returns the not of the bool
+
+
+
+Int Ops
+Equals Int Int = Returns true if the 2 ints are equal
+Less Int Int = Returns true if the first int is less than the second
+Greater Int Int = Returns true if the first int is greater than the second
+Add Int Int = Returns the sum of the 2 ints
+Sub Int Int = Returns the difference of the 2 ints
+Times Int Int = Returns the product of the 2 ints
+idiv Int Int = Returns the quotient of the 2 ints
+
+Pair Ops
+Fst (a,b) = Returns the first element of the pair
+Snd (a,b) = Returns the second element of the pair
+
+Variable Decalrations
+let (var:Type)= value ; expr = Declares a variable of type Type and assigns it the value value and then evaluates expr
+global (var:Type)= value ; expr = Declares a global variable of type Type and assigns it the value value and then evaluates expr
+local local (var:Type)= value ; expr = Declares a local variable of type Type and assigns it the value value and then evaluates expr
+
+
+loops
+while (bool) do {expr} ; expr = Evaluates expr while bool is true
+for (int to int) do {expr } ; expr = Evaluates expr for each int from the first int to the second int
+
+if statements
+if (bool) then {expr} else {expr} = Evaluates expr if bool is true and expr if bool is false
+if (bool) then {expr}; expr  = Evaluates expr if bool is true
